@@ -1,0 +1,305 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mi Amor para Ti</title>
+    <link rel="icon" href="kitty.png" type="image/png">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background: url('hellokitty.png') no-repeat center center fixed;
+            background-size: cover;
+            color: #333;
+            text-align: center;
+        }
+
+        /* Formulario de Inicio de Sesión */
+        .login-container {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.7);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            z-index: 9999;
+        }
+        .login-content {
+            background: #fff;
+            padding: 20px;
+            border-radius: 12px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            max-width: 400px;
+            width: 100%;
+        }
+        .login-content h1 {
+            color: #ff3399;
+            margin-bottom: 20px;
+        }
+        .login-content input {
+            width: calc(100% - 20px);
+            margin: 10px 0;
+            padding: 10px;
+            border-radius: 5px;
+            border: 2px solid #ff3399;
+            font-size: 16px;
+        }
+        .login-content button {
+            width: 100%;
+            padding: 10px;
+            font-size: 18px;
+            color: #fff;
+            background-color: #ff3399;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+        .login-content button:hover {
+            background-color: #e6007e;
+        }
+
+        .navbar {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            background: rgba(255, 255, 255, 0.9);
+            border-bottom: 1px solid #ddd;
+            z-index: 1000;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+        .navbar ul {
+            list-style: none;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+        }
+        .navbar li {
+            margin: 10px;
+        }
+        .navbar a {
+            text-decoration: none;
+            color: #ff3399;
+            font-size: 18px;
+            padding: 12px 20px;
+            display: block;
+            transition: color 0.3s;
+        }
+        .navbar a:hover {
+            color: #e6007e;
+        }
+
+        /* Contenedor de Información */
+        .container {
+            display: none;
+            max-width: 1200px;
+            margin: 20px auto;
+            padding: 20px;
+            background-color: rgba(255, 255, 255, 0.9);
+            border-radius: 15px;
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+        }
+        h1 {
+            color: #ff66b2;
+            font-size: 36px;
+            margin-bottom: 10px;
+        }
+        p {
+            font-size: 18px;
+            line-height: 1.6;
+            color: #555;
+        }
+        .heart {
+            font-size: 50px;
+            color: #ff3399;
+        }
+        .footer {
+            margin-top: 20px;
+            font-size: 14px;
+            color: #777;
+        }
+        .image-container, .video-container {
+            display: flex;
+            gap: 20px;
+            justify-content: center;
+            margin: 20px 0;
+            flex-wrap: wrap;
+        }
+        .image-box, .video-box {
+            flex: 1;
+            max-width: 300px;
+        }
+        .image-box img, .video-box video {
+            width: 100%;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        }
+        .video-overlay {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            font-size: 50px;
+            color: #fff;
+            cursor: pointer;
+            transition: opacity 0.3s;
+        }
+        .video-overlay.hidden {
+            opacity: 0;
+        }
+        .video-play-button {
+            display: inline-block;
+            padding: 10px 20px;
+            font-size: 24px;
+            color: #fff;
+            background-color: #ff3399;
+            border: none;
+            border-radius: 50%;
+            cursor: pointer;
+            transition: background-color 0.3s, transform 0.3s;
+        }
+        .video-play-button:hover {
+            background-color: #e6007e;
+            transform: scale(1.1);
+        }
+        .video-play-button:active {
+            background-color: #cc007a;
+        }
+    </style>
+</head>
+<body>
+    <!-- Formulario de Inicio de Sesión -->
+    <div class="login-container" id="login-container">
+        <div class="login-content">
+            <h1>Iniciar Sesión</h1>
+            <input type="text" id="username" placeholder="Nombre de usuario">
+            <input type="password" id="password" placeholder="Contraseña">
+            <button id="login-btn">Iniciar Sesión</button>
+        </div>
+    </div>
+
+    <!-- Contenedor de Información -->
+    <div class="container" id="info-container">
+        <h1>Mi Amor para Ti</h1>
+        <p>Mi amor,
+
+            Hoy es un día muy especial porque celebramos el cumpleaños de la persona más maravillosa que he tenido el privilegio de conocer. Aunque la distancia física nos separe, quiero empezar este mensaje diciéndote cuánto te amo y lo agradecido que estoy de tenerte en mi vida. Desde que llegaste a mi corazón, todo ha cambiado para mejor. Tu sonrisa ilumina mis días, tu risa es la melodía que llena mis momentos de alegría, y tu amor es el regalo más precioso que he recibido.
+            
+            Aunque no pueda estar a tu lado hoy para celebrarlo como me gustaría, quiero que sepas que estás en cada pensamiento mío, en cada latido de mi corazón. Cada vez que pienso en ti, siento una conexión profunda que trasciende la distancia. La forma en que me haces sentir amado y valorado, incluso a kilómetros de distancia, es algo que no puedo expresar con palabras. Eres mi compañera, mi confidente y mi mejor amiga, y estoy agradecido por cada momento que compartimos, ya sea a través de una llamada, un mensaje o una videollamada.
+            
+            En tu cumpleaños, deseo que sientas todo el amor que te tengo, aunque no pueda estar allí para dártelo en persona. Espero que te rodeen la felicidad, el cariño y las sorpresas que mereces. Que cada sueño que tienes se acerque más a hacerse realidad y que este nuevo año de vida esté lleno de momentos especiales y aventuras emocionantes.
+            
+            Mi amor, prometo seguir a tu lado en cada paso de este camino, apoyarte y quererte con todo mi corazón, sin importar la distancia que nos separe. Aunque hoy no pueda estar contigo para abrazarte y celebrar, estoy contigo en espíritu, enviándote todo mi amor y mejores deseos.
+            
+            Espero que tengas un cumpleaños increíble, lleno de alegría y rodeada de amor. Te amo más de lo que las palabras pueden expresar y estoy ansioso por el momento en que podamos estar juntos y celebrar todos estos momentos especiales cara a cara.
+            
+            Con todo mi amor,
+            
+            Juan.❤️</p>
+        <div class="heart">🤍</div>
+
+        <!-- Contenedores de Imágenes -->
+        <div class="image-container">
+            <div class="image-box">
+                <img src="Sunmy.png.jpg" alt="Imagen 1">
+            </div>
+            <div class="image-box">
+                <img src="sunmy2.png.jpg" alt="Imagen 2">
+            </div>
+            <div class="image-box">
+                <img src="sunmy3.png.jpg" alt="Imagen 3">
+            </div>
+            <div class="image-box">
+                <img src="sunmy4.png.jpg" alt="Imagen 4">
+            </div>
+            <div class="image-box">
+                <img src="sunmy5.png.jpg" alt="Imagen 5">
+            </div>
+            <div class="image-box">
+                <img src="sunmy6.png.jpg" alt="Imagen 6">
+            </div>
+        </div>
+
+        <!-- Contenedores de Videos -->
+        <div class="video-container">
+            <div class="video-box">
+                <video id="video1" controls>
+                    <source src="video.mp4" type="video/mp4">
+                    Tu navegador no soporta el formato de video.
+                </video>
+            </div>
+            <div class="video-box">
+                <video id="video2" controls>
+                    <source src="video2.mp4" type="video/mp4">
+                    Tu navegador no soporta el formato de video.
+                </video>
+            </div>
+            <div class="video-box">
+                <video id="video3" controls>
+                    <source src="video3.mp4" type="video/mp4">
+                    Tu navegador no soporta el formato de video.
+                </video>
+            </div>
+            <div class="video-box">
+                <video id="video4" controls>
+                    <source src="video4.mp4" type="video/mp4">
+                    Tu navegador no soporta el formato de video.
+                </video>
+            </div>
+        </div>
+        
+        <div class="footer">
+            &copy; 2024 Mi Amor para Ti
+        </div>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            // Elementos de la página
+            const loginContainer = document.getElementById('login-container');
+            const infoContainer = document.getElementById('info-container');
+            const videoContainer = document.getElementById('video1');
+            const playVideoBtn = document.getElementById('play-video');
+            const videoOverlay = document.getElementById('video-overlay');
+
+            // Datos de acceso
+            const validUsername = 'sunmypoto';
+            const validPassword = '28/04/2024';
+
+            // Función de inicio de sesión
+            document.getElementById('login-btn').addEventListener('click', function() {
+                const username = document.getElementById('username').value;
+                const password = document.getElementById('password').value;
+
+                if (username === validUsername && password === validPassword) {
+                    loginContainer.style.display = 'none';
+                    infoContainer.style.display = 'block'; // Mostrar el contenido principal
+                } else {
+                    alert('Nombre de usuario o contraseña incorrectos.');
+                }
+            });
+
+            // Video
+            playVideoBtn.addEventListener('click', function() {
+                videoContainer.play();
+                videoOverlay.classList.add('hidden');
+            });
+
+            videoContainer.addEventListener('play', function() {
+                videoOverlay.classList.add('hidden');
+            });
+
+            videoContainer.addEventListener('pause', function() {
+                videoOverlay.classList.remove('hidden');
+            });
+        });
+    </script>
+</body>
+</html>
