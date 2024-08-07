@@ -16,7 +16,6 @@
             text-align: center;
         }
 
-        /* Formulario de Inicio de Sesión */
         .login-container {
             position: fixed;
             top: 0;
@@ -96,7 +95,6 @@
             color: #e6007e;
         }
 
-        /* Contenedor de Información */
         .container {
             display: none;
             max-width: 1200px;
@@ -115,6 +113,11 @@
             font-size: 18px;
             line-height: 1.6;
             color: #555;
+        }
+        h2 {
+            color: #ff66b2;
+            font-size: 36px;
+            margin-bottom: 10px;
         }
         .heart {
             font-size: 50px;
@@ -175,7 +178,7 @@
     </style>
 </head>
 <body>
-    <!-- Formulario de Inicio de Sesión -->
+
     <div class="login-container" id="login-container">
         <div class="login-content">
             <h1>Iniciar Sesión</h1>
@@ -185,7 +188,7 @@
         </div>
     </div>
 
-    <!-- Contenedor de Información -->
+
     <div class="container" id="info-container">
         <h1>Mi Amor para Ti</h1>
         <p>Mi amor,
@@ -202,10 +205,16 @@
             
             Con todo mi amor,
             
-            Juan.❤️</p>
+            Juan.💖</p>
         <div class="heart">🤍</div>
+        <div class="cumpleaños">
+        <h2>Feliz cumpleaños mi negra hermosa</h2>
+        <p>Te amo demasiado mi negra, espero que te guste esto que te hice porque es algo que no sabia hacer y aprendi para hacertelo a ti mi amor, eres lo mejor que tengo en mi vida, de verdad espero que pronto nos podamos ver y conocernos, espero que la distancia no nos gane y podamos seguir felices con la relación. Estoy tan apegado a ti que no se que haria si te vas de mi vida, perdon por todo lo que te he hecho nunca quise hacerte daño, perdon por darme muchas oportunidades y nunca cambiar y siempre hacerte daño, esta vez estoy cambiando, se que soy muy inmaduro y que debi cambiar hace mucho, pero de verdad perdon por ser como soy y por esa razon hacerte tanto daño, te amo demasiado y siempre te voy a amar, mi meta es que nos podamos conocer y cumplir todo lo que hemos dicho que haremos, ojala que todas esas promesas no queden en vano y poder ser felices en persona mas de lo que somos a distancia, has sido la mejor mujer que he tenido en mi vida y siempre sera asi, mi momento favorito del dia es cuando recibo un mensaje tuyo, cada mensaje, foto o video tuyo me alegra el dia, y haciendo llamada soy la persona mas feliz porque cuando te veo siento demasiada felicidad al saber que tengo a una mujer tan hermosa en mi vida y mas como mi pareja, cada que hacemos viedeollamada me enamoro mas de ti. </p>
+    </div>
+    <div class="h2">
+        <h2>Feliz cumpleaños mi cachetona🤍</h2>
+    </div>
 
-        <!-- Contenedores de Imágenes -->
         <div class="image-container">
             <div class="image-box">
                 <img src="Sunmy.png.jpg" alt="Imagen 1">
@@ -227,7 +236,7 @@
             </div>
         </div>
 
-        <!-- Contenedores de Videos -->
+
         <div class="video-container">
             <div class="video-box">
                 <video id="video1" controls>
@@ -262,31 +271,31 @@
 
     <script>
         document.addEventListener('DOMContentLoaded', function() {
-            // Elementos de la página
+
             const loginContainer = document.getElementById('login-container');
             const infoContainer = document.getElementById('info-container');
             const videoContainer = document.getElementById('video1');
             const playVideoBtn = document.getElementById('play-video');
             const videoOverlay = document.getElementById('video-overlay');
 
-            // Datos de acceso
-            const validUsername = 'sunmypoto';
-            const validPassword = '28/04/2024';
 
-            // Función de inicio de sesión
+            const validUsername = 'sunmypoto';
+            const validPassword = 'lapulga';
+
+
             document.getElementById('login-btn').addEventListener('click', function() {
                 const username = document.getElementById('username').value;
                 const password = document.getElementById('password').value;
 
                 if (username === validUsername && password === validPassword) {
                     loginContainer.style.display = 'none';
-                    infoContainer.style.display = 'block'; // Mostrar el contenido principal
+                    infoContainer.style.display = 'block'; 
                 } else {
                     alert('Nombre de usuario o contraseña incorrectos.');
                 }
             });
 
-            // Video
+
             playVideoBtn.addEventListener('click', function() {
                 videoContainer.play();
                 videoOverlay.classList.add('hidden');
